@@ -25,21 +25,34 @@ class DynamicArray:
     def isEmpty(self):
         return self.sizeOf() == 0
 
+    #Returns the value at the index
     def getVal(self, index):
         if index > self.len:
             print('Outside array bound')
         else:
             return self.arr[index]
 
+    #Adds a value to the next empty spot of the array. If the array is full, double the array size and then add the next value in
+    def addVal(self, elem):
+        if self.len + 1 >= self.capacity:
+            self.capacity = self.capacity * 2
+            new_arr = np.empty(self.capacity, object)
+            for i in range(self.len):
+                new_arr[i] = self.arr[i]
+            self.arr = new_arr
+            self.len += 1
+        else:
+            self.arr[self.len] = elem
+            self.len += 1
+
   
-
-
-
-
-
-      
 #TEST
 x = DynamicArray()
 x.array(10)
-x.setVal(0,1)
-print(x.getVal(0))
+
+for i in range(11):
+    x.addVal(i)
+    print(x.len)
+print(x.capacity)
+
+
