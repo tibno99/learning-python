@@ -64,8 +64,7 @@ class DoublyLinkedList:
     def removeFirst(self):
         #If the list is already empty, return a message
         if self.isEmpty() == 1:
-            print('List is empty')
-            return 
+            print('List is empty') 
         #Else remove the first node
         else:
             #Set the head node to the next node it referenced
@@ -77,6 +76,41 @@ class DoublyLinkedList:
                 self.head.prev = None
             return data
 
+    def removeLast(self):
+        #If the list is already empty, return a message
+        if self.isEmpty() == 1:
+            print('List is empty') 
+        #Else remove the last node
+        else:
+            #Set the tail node to the previous node it referenced
+            data = self.tail.data
+            self.tail = self.tail.previous
+            self.size -= 1
+            #If the size is now 0, set all nodes back to null
+            if self.isEmpty() == 1:
+                self.tail.next = None
+            return data
+    
+    #Peak to see what the header value is
+    def peakFirst(self):
+        if self.isEmpty() == 1:
+            print('List is empty') 
+        else:
+            return self.head.data
+
+    #Peak to see what the tail value is
+    def peakLast(self):
+        if self.isEmpty() == 1:
+            print('List is empty')
+        else:
+            return self.tail.data 
+
+    #Additional methods to add:
+    #Find value
+    #Remove node @ certain index or value
+    #Find the index of a value
+    #Can add an iterator
+    
    
 
 #TEST
@@ -87,4 +121,4 @@ x.add(28)
 x.addFirst(29)
 x.clear()
 
-print(x.sizeOf())
+
