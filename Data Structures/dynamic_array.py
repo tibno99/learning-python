@@ -1,3 +1,4 @@
+#Dynamic Array Code
 import numpy as np
 
 #Although python lists are already dynamic, practice making a dynamic array using numpy's .empty static arrays

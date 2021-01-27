@@ -22,6 +22,8 @@ class Queue():
     def offer(self, val):
         self.data.add(val)
 
+#Could add an iterator
+
 #Test
 test_queue = Queue()
 test_queue.offer(1)
