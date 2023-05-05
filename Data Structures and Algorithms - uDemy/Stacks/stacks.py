@@ -1,9 +1,14 @@
 class Node:
+
+
     def __init__(self, val):
         self.val = val
         self.next = None
 
+
 class Stack:
+
+
     def __init__(self, value):
         new_node = Node(value)
         self.top = new_node
@@ -35,8 +40,6 @@ class Stack:
         return temp
         
         
-
-
 new_stack = Stack(0)
 new_stack.push(1)
 new_stack.push(2)
